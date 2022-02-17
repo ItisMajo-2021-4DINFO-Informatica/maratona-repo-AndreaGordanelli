@@ -9,19 +9,21 @@
         " Height="650" Width="800">
     <StackPanel>
         <Button x:Name="BtnLeggiDaFile" Content="Leggi da file" Click="BtnLeggiDaFile_Click" />
-        <DataGrid x:Name="DgElencoAtleti" Height="300" />
-        <Label Content="Inserisci il nome dell'atleta e la città:" />
-        <Label FontSize="10">Atleta</Label>
+        <DataGrid x:Name="DgElencoAtleti" Height="209" />
+        <Label Content="Inserisci il nome dell'atleta e la città:" FontWeight="Bold" />
+        <Label FontSize="11">Atleta</Label>
         <TextBox x:Name="TxTNome" />
-        <Label FontSize="10">Città</Label>
+        <Label FontSize="11">Città</Label>
         <TextBox x:Name="TxTCitta" Padding="0" BorderThickness="1" />
-        <Label x:Name="LblArtista" />
         <Button x:Name="BtnCercaArtista" Content="Visualizza Tempo" Click="BtnVisualizzaTempo_Click" />
-        <Label Content="Inserisci il nome della città:" />
+        <Label Content="Inserisci il nome della città:" FontWeight="Bold" />
         <TextBox x:Name="TxTPartecipantiCitta" />
-        <Label x:Name="LblNumBrani" />
         <Button x:Name="BtnPartecipantiCittà" Content="Partecipanti da città" Click="BtnPartecipantiCittà_Click" />
-        <Label x:Name="LblDurata" />
-        <Button x:Name="BtnStampaFile" Content="Calcola durata totale" Click="BtnStampaFile_Click" />
+        <Label Content="Stampa su file gli atleti migliori di quello selezionato" FontWeight="Bold" />
+        <Label FontSize="11">Atleta</Label>
+        <TextBox x:Name="TxTAtletaEsempio" />
+        <Label FontSize="11">Città</Label>
+        <TextBox x:Name="TxTCittaEsempio" Padding="0" BorderThickness="1" />
+        <Button x:Name="BtnStampaFile" Content="Calcola atleti migliori" Click="BtnStampaFile_Click" />
     </StackPanel>
 </Window>

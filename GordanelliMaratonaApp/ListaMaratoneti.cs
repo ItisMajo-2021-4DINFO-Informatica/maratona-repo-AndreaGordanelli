@@ -53,5 +53,27 @@ namespace GordanelliMaratonaApp {
             }
             return output = output.Length < 1 ? "Nessun risultato trovato" : output;
         }
+
+        public string AtletiMigliori(string TxTAtletaEsempio, string TxTCittaFile) {
+            string output = "";
+            int TempoDaBattere = 0;
+            foreach (Maratoneta maratoneta in elencoMaratoneti) {
+                if (maratoneta.nomeAtleta == TxTAtletaEsempio && maratoneta.cittàCorsa == TxTCittaFile) {
+                    TempoDaBattere = maratoneta.TempoSec(maratoneta);
+                }
+            }
+            foreach (Maratoneta maratoneta in elencoMaratoneti) {
+                if (maratoneta.cittàCorsa == TxTCittaFile && maratoneta.TempoSec(maratoneta)<TempoDaBattere) {
+                    output += $"L'atleta {maratoneta.nomeAtleta} ha battuto l'alteta {TxTAtletaEsempio} con un tempo di {maratoneta.TempoSec(maratoneta)} minuti\n";
+                }
+            }
+
+            output = output.Length < 1 ? "Nessun risultato trovato" : output;
+            FileStream stream = new FileStream("output.txt", FileMode.Create);
+            using (StreamWriter writer = new StreamWriter(stream)) {
+                writer.Write(output);
+            }
+            return $"File scritto nella cartella: {Path.GetFullPath("output.txt")}";
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace GordanelliMaratonaApp {
         }
 
         private void BtnStampaFile_Click(object sender, RoutedEventArgs e) {
-
+            MessageBox.Show(Lista.AtletiMigliori(TxTAtletaEsempio.Text, TxTCittaEsempio.Text));
         }
     }
 }
