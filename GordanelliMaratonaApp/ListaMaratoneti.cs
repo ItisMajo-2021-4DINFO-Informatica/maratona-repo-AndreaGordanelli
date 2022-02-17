@@ -36,7 +36,22 @@ namespace GordanelliMaratonaApp {
                 }
             }
         }
+            public string VisualizzaTempo(string TxTNome, string TxTCitta) {
+                string output ="";
+                foreach (Maratoneta maratoneta in elencoMaratoneti) {
+                    if (maratoneta.nomeAtleta == TxTNome && maratoneta.cittàCorsa == TxTCitta) {
+                    output = $"L'atleta: {maratoneta.nomeAtleta} durante la gara svolta a {maratoneta.cittàCorsa} ha corso per {maratoneta.TempoSec(maratoneta)} minuti";
+                    }
+                }
+            output = output.Length < 1 ? "Nessun atleta trovato" : output;
+            return output;
+            }
+
+        public string PartecipantiCitta(string TxTCitta) {
+
+        }
+        }
     }
-}
+
 
   

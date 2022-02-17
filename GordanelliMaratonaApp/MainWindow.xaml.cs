@@ -20,11 +20,15 @@ namespace GordanelliMaratonaApp {
         }
 
         private void BtnVisualizzaTempo_Click(object sender, RoutedEventArgs e) {
-            foreach(Maratoneta maratoneta in Lista.elencoMaratoneti) {
-                if(maratoneta.nomeAtleta == TxTNome.Text && maratoneta.cittàCorsa == TxTCitta.Text) {
-                    MessageBox.Show($"L'atleta: {maratoneta.nomeAtleta} durante la gara svolta a {maratoneta.cittàCorsa} ha corso per {maratoneta.TempoSec()}");
-                }
-            }
+            MessageBox.Show(Lista.VisualizzaTempo(TxTNome.Text, TxTCitta.Text));
+        }
+
+        private void BtnPartecipantiCittà_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void BtnStampaFile_Click(object sender, RoutedEventArgs e) {
+
         }
     }
 }
