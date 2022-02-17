@@ -33,6 +33,8 @@ namespace GordanelliMaratonaApp {
         }
 
         private void BtnAggiornaFile_Click(object sender, RoutedEventArgs e) {
+            Lista.AggiornaDati();
+            DgElencoAtleti.Items.Refresh();
         }
     }
 }

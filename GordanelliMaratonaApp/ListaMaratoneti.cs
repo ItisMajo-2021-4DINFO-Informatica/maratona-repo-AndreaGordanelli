@@ -77,19 +77,24 @@ namespace GordanelliMaratonaApp {
         }
 
         public void AggiornaDati() {
-            using (FileStream flussoDati = new FileStream("update.txt", FileMode.Open, FileAccess.Read)) {
+            using (FileStream flussoDati = new FileStream("input.txt", FileMode.Open, FileAccess.Read)) {
                 using (StreamReader lettoreDati = new StreamReader(flussoDati)) {
                     while (!lettoreDati.EndOfStream) {
                         string linea = lettoreDati.ReadLine();
                         string[] campi = linea.Split('%');
-
+                        bool exist = false;
                         Maratoneta maratoneta = new Maratoneta();
                         maratoneta.nomeAtleta = campi[0];
                         maratoneta.società = campi[1];
                         maratoneta.tempoImpiegato = campi[2];
                         maratoneta.cittàCorsa = campi[3];
-
-                        Aggiungi(maratoneta);
+                        foreach(Maratoneta maraton in elencoMaratoneti)
+                        {
+                            if(maratoneta.nomeAtleta == maraton.nomeAtleta && maratoneta.cittàCorsa == maraton.cittàCorsa) { exist = true; }
+                        }
+                        if (!exist) { Aggiungi(maratoneta); }
+                        
+                        
                     }
                 }
             }
