@@ -13,7 +13,7 @@ namespace GordanelliMaratonaApp {
             ora = ora.Replace("m", "");
             ora = ora.Replace("h", "");
             int minuti = Int16.Parse(ora.Substring(ora.Length - 2, ora.Length - 1)) + Int16.Parse((ora.Substring(0, ora.Length - 2))) * 60;
-            return(minuti);
+            return (minuti);
         }
     }
 }

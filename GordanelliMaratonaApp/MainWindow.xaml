@@ -9,6 +9,7 @@
         " Height="650" Width="800">
     <StackPanel>
         <Button x:Name="BtnLeggiDaFile" Content="Leggi da file" Click="BtnLeggiDaFile_Click" />
+        <Button x:Name="BtnAggiornaFile" Content="Aggiorna il file" Click="BtnAggiornaFile_Click"></Button>
         <DataGrid x:Name="DgElencoAtleti" Height="209" />
         <Label Content="Inserisci il nome dell'atleta e la città:" FontWeight="Bold" />
         <Label FontSize="11">Atleta</Label>

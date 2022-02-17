@@ -6,7 +6,8 @@ namespace GordanelliMaratonaApp {
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
-        ListaMaratoneti Lista;
+        private ListaMaratoneti Lista;
+
         public MainWindow() {
             InitializeComponent();
             Lista = new ListaMaratoneti();
@@ -29,6 +30,9 @@ namespace GordanelliMaratonaApp {
 
         private void BtnStampaFile_Click(object sender, RoutedEventArgs e) {
             MessageBox.Show(Lista.AtletiMigliori(TxTAtletaEsempio.Text, TxTCittaEsempio.Text));
+        }
+
+        private void BtnAggiornaFile_Click(object sender, RoutedEventArgs e) {
         }
     }
 }
