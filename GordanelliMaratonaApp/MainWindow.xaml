@@ -11,8 +11,10 @@
         <Button x:Name="BtnLeggiDaFile" Content="Leggi da file" Click="BtnLeggiDaFile_Click" />
         <DataGrid x:Name="DgElencoAtleti" Height="300" />
         <Label Content="Inserisci il nome dell'atleta e la città:" />
+        <Label FontSize="10">Atleta</Label>
         <TextBox x:Name="TxTNome" />
-        <TextBox x:Name="TxTCitta" />
+        <Label FontSize="10">Città</Label>
+        <TextBox x:Name="TxTCitta" Padding="0" BorderThickness="1" />
         <Label x:Name="LblArtista" />
         <Button x:Name="BtnCercaArtista" Content="Visualizza Tempo" Click="BtnVisualizzaTempo_Click" />
         <Label Content="Inserisci il nome della città:" />

@@ -24,7 +24,7 @@ namespace GordanelliMaratonaApp {
         }
 
         private void BtnPartecipantiCittà_Click(object sender, RoutedEventArgs e) {
-
+            MessageBox.Show(Lista.PartecipantiCitta(TxTPartecipantiCitta.Text));
         }
 
         private void BtnStampaFile_Click(object sender, RoutedEventArgs e) {

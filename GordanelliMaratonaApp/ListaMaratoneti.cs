@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace GordanelliMaratonaApp {
-    class ListaMaratoneti {
+
+    internal class ListaMaratoneti {
         public List<Maratoneta> elencoMaratoneti;
 
         public ListaMaratoneti() {
@@ -31,27 +28,30 @@ namespace GordanelliMaratonaApp {
                         maratoneta.cittàCorsa = campi[3];
 
                         Aggiungi(maratoneta);
-
                     }
                 }
             }
         }
-            public string VisualizzaTempo(string TxTNome, string TxTCitta) {
-                string output ="";
-                foreach (Maratoneta maratoneta in elencoMaratoneti) {
-                    if (maratoneta.nomeAtleta == TxTNome && maratoneta.cittàCorsa == TxTCitta) {
+
+        public string VisualizzaTempo(string TxTNome, string TxTCitta) {
+            string output = "";
+            foreach (Maratoneta maratoneta in elencoMaratoneti) {
+                if (maratoneta.nomeAtleta == TxTNome && maratoneta.cittàCorsa == TxTCitta) {
                     output = $"L'atleta: {maratoneta.nomeAtleta} durante la gara svolta a {maratoneta.cittàCorsa} ha corso per {maratoneta.TempoSec(maratoneta)} minuti";
-                    }
                 }
+            }
             output = output.Length < 1 ? "Nessun atleta trovato" : output;
             return output;
-            }
+        }
 
         public string PartecipantiCitta(string TxTCitta) {
-
-        }
+            string output = "";
+            foreach (Maratoneta maratoneta in elencoMaratoneti) {
+                if (maratoneta.cittàCorsa == TxTCitta) {
+                    output += $"{maratoneta.nomeAtleta}\n";
+                }
+            }
+            return output = output.Length < 1 ? "Nessun risultato trovato" : output;
         }
     }
-
-
-  
+}
