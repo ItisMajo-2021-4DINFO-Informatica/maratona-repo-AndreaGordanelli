@@ -1,48 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
-namespace GordanelliMaratonaApp
-{
+namespace GordanelliMaratonaApp {
+
     /// <summary>
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
+    public partial class MainWindow : Window {
+        ListaMaratoneti Lista;
+        public MainWindow() {
             InitializeComponent();
+            Lista = new ListaMaratoneti();
         }
 
-        private void BtnCercaArtista_Click(object sender, RoutedEventArgs e)
-        {
-
+        private void BtnLeggiDaFile_Click(object sender, RoutedEventArgs e) {
+            Lista.LeggiDati();
+            DgElencoAtleti.ItemsSource = Lista.elencoMaratoneti;
+            DgElencoAtleti.Items.Refresh();
+            BtnLeggiDaFile.IsEnabled = false;
         }
 
-        private void BtnContaBrani_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnDurata_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnLeggiDaFile_Click(object sender, RoutedEventArgs e)
-        {
-
+        private void BtnVisualizzaTempo_Click(object sender, RoutedEventArgs e) {
+            foreach(Maratoneta maratoneta in Lista.elencoMaratoneti) {
+                if(maratoneta.nomeAtleta == TxTNome.Text && maratoneta.cittàCorsa == TxTCitta.Text) {
+                    MessageBox.Show($"L'atleta: {maratoneta.nomeAtleta} durante la gara svolta a {maratoneta.cittàCorsa} ha corso per {maratoneta.TempoSec()}");
+                }
+            }
         }
     }
 }

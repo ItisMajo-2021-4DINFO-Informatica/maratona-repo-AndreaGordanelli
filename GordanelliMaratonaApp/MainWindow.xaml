@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GordanelliMaratonaApp"
         mc:Ignorable="d"
-        Title="Discografia" Height="650" Width="800">
+        Title="Maratona
+        " Height="650" Width="800">
     <StackPanel>
-        <Button x:Name="BtnLeggiDaFile" Content="Leggi da file" Click="BtnLeggiDaFile_Click"/>
-        <DataGrid x:Name="DgElencoBrani" Height="300" />
-        <Label Content="Inserisci il nome del titolo:"/>
-        <TextBox x:Name="TxtTitolo" />
+        <Button x:Name="BtnLeggiDaFile" Content="Leggi da file" Click="BtnLeggiDaFile_Click" />
+        <DataGrid x:Name="DgElencoAtleti" Height="300" />
+        <Label Content="Inserisci il nome dell'atleta e la città:" />
+        <TextBox x:Name="TxTNome" />
+        <TextBox x:Name="TxTCitta" />
         <Label x:Name="LblArtista" />
-        <Button x:Name="BtnCercaArtista" Content="Cerca Artista" Click="BtnCercaArtista_Click"/>
-        <Label Content="Inserisci il nome dell'album:"/>
+        <Button x:Name="BtnCercaArtista" Content="Visualizza Tempo" Click="BtnVisualizzaTempo_Click" />
+        <Label Content="Inserisci il nome dell'album:" />
         <TextBox x:Name="TxtAlbum" />
         <Label x:Name="LblNumBrani" />
-        <Button x:Name="BtnContaBrani" Content="Conta Brani" Click="BtnContaBrani_Click"/>
+        <Button x:Name="BtnContaBrani" Content="Conta Brani" Click="BtnContaBrani_Click" />
         <Label x:Name="LblDurata" />
-        <Button x:Name="BtnDurata" Content="Calcola durata totale" Click="BtnDurata_Click"/>
+        <Button x:Name="BtnDurata" Content="Calcola durata totale" Click="BtnDurata_Click" />
     </StackPanel>
 </Window>
