@@ -75,5 +75,24 @@ namespace GordanelliMaratonaApp {
             }
             return $"File scritto nella cartella: {Path.GetFullPath("output.txt")}";
         }
+
+        public void AggiornaDati() {
+            using (FileStream flussoDati = new FileStream("update.txt", FileMode.Open, FileAccess.Read)) {
+                using (StreamReader lettoreDati = new StreamReader(flussoDati)) {
+                    while (!lettoreDati.EndOfStream) {
+                        string linea = lettoreDati.ReadLine();
+                        string[] campi = linea.Split('%');
+
+                        Maratoneta maratoneta = new Maratoneta();
+                        maratoneta.nomeAtleta = campi[0];
+                        maratoneta.società = campi[1];
+                        maratoneta.tempoImpiegato = campi[2];
+                        maratoneta.cittàCorsa = campi[3];
+
+                        Aggiungi(maratoneta);
+                    }
+                }
+            }
+        }
     }
 }
