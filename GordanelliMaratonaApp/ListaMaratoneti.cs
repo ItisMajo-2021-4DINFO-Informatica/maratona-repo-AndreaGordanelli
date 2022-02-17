@@ -63,7 +63,7 @@ namespace GordanelliMaratonaApp {
                 }
             }
             foreach (Maratoneta maratoneta in elencoMaratoneti) {
-                if (maratoneta.cittàCorsa == TxTCittaFile && maratoneta.TempoSec(maratoneta)<TempoDaBattere) {
+                if (maratoneta.cittàCorsa == TxTCittaFile && maratoneta.TempoSec(maratoneta) < TempoDaBattere) {
                     output += $"L'atleta {maratoneta.nomeAtleta} ha battuto l'alteta {TxTAtletaEsempio} con un tempo di {maratoneta.TempoSec(maratoneta)} minuti\n";
                 }
             }
